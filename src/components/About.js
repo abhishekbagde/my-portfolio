@@ -5,7 +5,7 @@ const About = () => {
     <section id="about" className="about-section">
       <h2>About Me</h2>
       <p>
-        Hi! I'm [Your Name], a passionate full stack developer with experience in building
+        Hi! I&apos;m [Your Name], a passionate full stack developer with experience in building
         web applications using modern technologies like MERN stack, Next.js, and more.
       </p>
     </section>
