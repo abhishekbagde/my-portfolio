@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Abhishek Bagde's Portfolio</title>
+        <title>Abhishek Bagde&apos;s Portfolio</title>
       </head>
       <body className={`d-flex flex-column ${isHomePage ? 'home-page' : 'min-vh-100'}`}>
         {/* Particles Background - only render on home page */}
