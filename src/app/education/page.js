@@ -28,7 +28,7 @@ const Education = () => {
     {
       degree: "Master of Advanced Computer Science",
       institution: "University of Manchester",
-      period: "2022 - 2023",
+      period: "2023 - 2024",
       courses: [
         "Machine Learning",
         "Representation Learning",
@@ -39,7 +39,7 @@ const Education = () => {
     },
     {
       degree: "Bachelor of Computer Science and Engineering",
-      institution: "VNIT Nagpur",
+      institution: "Nagpur University",
       period: "2015 - 2019",
       courses: [
         "Data Structures and Program Design",
