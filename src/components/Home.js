@@ -2,13 +2,11 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <section id="home" className="home-section">
-      <div className="main-content">
-          <div className="text-section">
-            <h1>I&apos;m ABHISHEK BAGDE</h1>
-            <h3>Full Stack Developer</h3>
-          </div>
-        </div>
+    <section className="home-section">
+      <div className="content">
+        <h1 className="animate-content animate-content-delay-1">I'm ABHISHEK BAGDE</h1>
+        <h3 className="animate-content animate-content-delay-2">Full Stack Developer</h3>
+      </div>
     </section>
   );
 };

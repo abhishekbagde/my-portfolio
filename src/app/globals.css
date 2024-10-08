@@ -1,4 +1,8 @@
 /* Global styles */
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Fira Code', monospace;
   background-color: #000;
@@ -8,199 +12,377 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  overflow-x: hidden;
 }
 
-/* Container for the entire page */
-.container {
+/* Home page specific styles */
+body.home-page {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-main {
+  flex: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh; /* Full viewport height */
+  align-items: center;
+  justify-content: center;
   position: relative;
-  z-index: 1;
-  color: #fff;
-  padding: 0 20px; 
-  position: relative;
-  z-index: 0;
+  z-index: 2; /* Ensure content is above Particles */
 }
 
+/* Main Content Layout */
+main {
+  flex: 1 0 auto;
+  padding-top: 56px; /* Adjust based on your navbar height */
+  position: relative;
+  z-index: 2; /* Ensure content is above Particles */
+}
+
+/* Footer */
+.footer {
+  flex-shrink: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px 0;
+  position: relative;
+  z-index: 3;
+}
+
+.footer p {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.footer a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #00ffcc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .footer .row {
+    text-align: center;
+  }
+  
+  .footer .text-md-end {
+    text-align: center !important;
+    margin-top: 10px;
+  }
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 4; /* Ensure navbar is above all other elements */
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
 
 /* Ensure particles canvas stays in the background */
-canvas {
-  position: absolute;
+#tsparticles {
+  position: fixed !important;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Keeps it behind the content */
+  z-index: 1; /* Ensure Particles are below all other content */
 }
 
-/* Styling for container */
-.container {
-  position: relative;
-  z-index: 1;
-}
-
-/* Navigation Bar */
-.nav {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1; /* Ensure nav is above particles */
-}
-
-.nav ul {
-  list-style-type: none;
+/* Home section */
+.home-section {
+  height: 100%;
   display: flex;
-  gap: 20px;
-}
-
-.nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav ul li a:hover {
-  color: #00ffcc; /* Highlight color on hover */
-}
-
-/* Main Content Layout */
-.main-content {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  flex-grow: 1; /* Makes sure the content grows to fill available space */
-  z-index: 1; /* Ensure content is above particles */
-  position: relative; /* Stay on top of the background */
+  position: relative;
+  z-index: 2; /* Ensure content is above Particles */
 }
 
-.main-content h1, .main-content h3 {
+/* Content animations */
+.animate-content {
   opacity: 0;
-  transform: translateY(50px); /* Slide from below */
-  animation: fadeInUp 1s forwards; /* Fade in and move up */
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards;
 }
 
-.main-content h1 {
-  animation-delay: 0.3s; /* Delay for a staggered effect */
+.animate-content-delay-1 {
+  animation-delay: 0.3s;
 }
 
-.main-content h3 {
+.animate-content-delay-2 {
   animation-delay: 0.6s;
+}
+
+.animate-content-delay-3 {
+  animation-delay: 0.9s;
 }
 
 @keyframes fadeInUp {
   to {
     opacity: 1;
-    transform: translateY(0); /* Move to final position */
+    transform: translateY(0);
   }
 }
 
-/* Footer */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-  padding: 20px;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Slight background to separate from particles */
-  z-index: 1; /* Keep it above particles */
+/* Apply animations to specific elements */
+h1, h2, h3, p, .btn, .card, .list-group-item {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards;
+}
+
+/* Staggered animation delays for common elements */
+h1 {
+  animation-delay: 0.3s;
+}
+
+h2, h3 {
+  animation-delay: 0.5s;
+}
+
+p, .btn, .card, .list-group-item {
+  animation-delay: 0.7s;
+}
+
+/* About page styles */
+.about-section {
+  padding: 2rem 0;
+}
+
+.about-section .card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.about-section .card:hover {
+  transform: translateY(-5px);
+}
+
+.about-section .list-group-item {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.about-section strong {
+  color: #00ffcc;
+}
+
+/* Experience page styles */
+.experience-section {
+  padding: 2rem 0;
+}
+
+.experience-item {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.experience-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.experience-item .card-title {
+  color: #00ffcc;
+}
+
+.experience-item .card-subtitle {
+  color: #ffffff;
+}
+
+.experience-item ul li {
   position: relative;
-  bottom: 0;
+  padding-left: 20px;
 }
 
-.footer-left {
-  color: #ccc;
-}
-
-.footer-right {
-  display: flex;
-  gap: 20px;
-}
-
-.footer-right a {
-  color: #fff;
-  font-size: 24px;
-  transition: color 0.3s;
-}
-
-.footer-right a:hover {
-  color: #00ffcc; /* Highlight color for icons on hover */
-}
-.loader {
-  position: fixed;
-  top: 0;
+.experience-item ul li:before {
+  content: '•';
+  position: absolute;
   left: 0;
+  color: #00ffcc;
+}
+
+.company-logo-container {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  border-radius: 8px;  /* Slightly rounded corners */
+}
+
+.company-logo {
+  object-fit: contain;
+  padding: 5px;  /* Add some padding to prevent logo from touching the edges */
+}
+
+.default-logo {
   width: 100%;
   height: 100%;
-  background-color: #000;
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 9999;
+  justify-content: center;
+  background-color: #00ffcc;
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.particle-loader {
-  width: 100px;
-  height: 100px;
+/* Skills & Certifications Styles */
+.skills-certifications-section {
+  padding: 2rem 0;
+}
+
+.skill-badge {
+  background-color: #00ffcc;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.certification-item {
+  background-color: rgba(0, 255, 204, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.certification-item:hover {
+  background-color: rgba(0, 255, 204, 0.2);
+}
+
+.certification-item svg {
+  color: #00ffcc;
+}
+
+/* Contact Page Styles */
+.contact-section {
+  padding: 2rem 0;
+}
+
+.contact-section .card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-section .card-body {
+  padding: 2rem;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.contact-section .card a {
+  color: #00ffcc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-section .card a:hover {
+  color: #00e6b8;
+  text-decoration: underline;
+}
+
+.contact-section .card svg {
+  color: #00ffcc;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+/* Projects Page Styles */
+.projects-section {
+  padding: 2rem 0;
+}
+
+.projects-section .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.projects-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.projects-section .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projects-section .btn-outline-light {
+  border-color: #00ffcc;
+  color: #00ffcc;
+}
+
+.projects-section .btn-outline-light:hover {
+  background-color: #00ffcc;
+  color: #000;
+}
+
+/* Education Page Styles */
+.education-section {
+  padding: 2rem 0;
+}
+
+.education-item {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.education-item .card-title {
+  color: #00ffcc;
+}
+
+.education-item .card-subtitle {
+  color: #ffffff;
+}
+
+.education-item ul li {
   position: relative;
+  padding-left: 20px;
 }
 
-.particle-loader span {
+.education-item ul li:before {
+  content: '•';
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  border-radius: 50%;
-  animation: particle-animation 1.5s infinite ease-in-out;
-}
-
-.particle-loader span:nth-child(1) {
   left: 0;
-  animation-delay: 0s;
+  color: #00ffcc;
 }
 
-.particle-loader span:nth-child(2) {
-  left: 25px;
-  animation-delay: 0.2s;
+.education-item svg {
+  color: #00ffcc;
 }
 
-.particle-loader span:nth-child(3) {
-  left: 50px;
-  animation-delay: 0.4s;
-}
-
-.particle-loader span:nth-child(4) {
-  left: 75px;
-  animation-delay: 0.6s;
-}
-
-.particle-loader span:nth-child(5) {
-  left: 100px;
-  animation-delay: 0.8s;
-}
-
-@keyframes particle-animation {
-  0%, 100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-20px);
-    opacity: 0.5;
-  }
-}
-
-.container.loading {
-  opacity: 0;
-  visibility: hidden;
-}
-
-/* Transition for smooth fade-in */
-.container {
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-}
+/* ... rest of your existing styles ... */
