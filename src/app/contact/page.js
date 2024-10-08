@@ -1,14 +1,9 @@
 "use client";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
-// Removed MapContainer, TileLayer, Marker, Popup from 'react-leaflet';
-// Removed 'leaflet/dist/leaflet.css';
-import { useEffect } from 'react';
+
 
 const Contact = () => {
-  useEffect(() => {
-    // Removed Leaflet icon setup as the map is no longer used
-  }, []);
-
+  
   return (
     <section className="contact-section container my-5">
       <h2 className="text-center mb-5 animate-content animate-content-delay-1">Get in Touch</h2>
