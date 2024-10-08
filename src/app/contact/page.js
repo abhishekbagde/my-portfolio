@@ -1,18 +1,12 @@
 "use client";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
+// Removed MapContainer, TileLayer, Marker, Popup from 'react-leaflet';
+// Removed 'leaflet/dist/leaflet.css';
 import { useEffect } from 'react';
 
 const Contact = () => {
   useEffect(() => {
-    // This is to fix an issue with the Leaflet icon
-    delete L.Icon.Default.prototype._getIconUrl;
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png').default,
-      iconUrl: require('leaflet/dist/images/marker-icon.png').default,
-      shadowUrl: require('leaflet/dist/images/marker-shadow.png').default,
-    });
+    // Removed Leaflet icon setup as the map is no longer used
   }, []);
 
   return (
@@ -44,26 +38,6 @@ const Contact = () => {
                   <FaMapMarkerAlt className="me-3 contact-icon" />
                   <span>Manchester, United Kingdom</span>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-6">
-          <div className="card bg-dark text-white h-100 animate-content animate-content-delay-3">
-            <div className="card-body d-flex flex-column">
-              <h3 className="card-title text-center mb-4">Location</h3>
-              <div className="flex-grow-1" style={{ height: '300px' }}>
-                <MapContainer center={[53.4808, -2.2426]} zoom={13} style={{ height: '100%', width: '100%' }}>
-                  <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                  />
-                  <Marker position={[53.4808, -2.2426]}>
-                    <Popup>
-                      Manchester, UK
-                    </Popup>
-                  </Marker>
-                </MapContainer>
               </div>
             </div>
           </div>
