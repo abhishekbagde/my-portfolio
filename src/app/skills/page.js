@@ -22,16 +22,40 @@ const Certification = ({ title, icon }) => (
 const SkillsAndCertifications = () => {
   const skillCategories = [
     {
-      title: "Languages & Frameworks",
-      skills: ["Python", "Django", "Flask", "C#", ".NET", "JavaScript", "React", "Node.js", "Express.js", "LaTeX", "Machine Learning", "Computer Vision", "Natural Language Processing", "SQL", "MongoDB", "PostgreSQL"]
+      title: "Programming Languages",
+      skills: ["Python", "JavaScript", "C#", "SQL", "HTML", "CSS"]
     },
     {
-      title: "Cloud & Web Development",
-      skills: ["Docker", "Kubernetes", "Jenkins", "Git", "Terraform", "AWS Services", "HTML", "CSS", "Bootstrap", "jQuery", "RESTful APIs", "Postman", "XML", "JSON", "Power BI"]
+      title: "Frameworks & Libraries",
+      skills: ["Django", "Flask", "React", "Node.js", "Express.js", ".NET", "Bootstrap", "jQuery"]
+    },
+    {
+      title: "AI & Machine Learning",
+      skills: ["Machine Learning", "Computer Vision", "Natural Language Processing"]
+    },
+    {
+      title: "Databases",
+      skills: ["MongoDB", "PostgreSQL", "SQL Server"]
+    },
+    {
+      title: "Cloud & DevOps",
+      skills: ["AWS Services", "Docker", "Kubernetes", "Jenkins", "Terraform"]
+    },
+    {
+      title: "Version Control & Tools",
+      skills: ["Git", "RESTful APIs", "Postman", "XML", "JSON", "LaTeX"]
+    },
+    {
+      title: "Data Visualization",
+      skills: ["Power BI"]
     },
     {
       title: "Project Management & Processes",
-      skills: ["Agile methodology", "Software development life-cycle (SDLC)", "Requirements gathering", "Incident management", "Release management", "Automation", "Code analysis", "Testing", "Security", "Leadership", "Collaboration", "Communication"]
+      skills: ["Agile methodology", "SDLC", "Requirements gathering", "Incident management", "Release management"]
+    },
+    {
+      title: "Soft Skills",
+      skills: ["Leadership", "Collaboration", "Communication"]
     }
   ];
 

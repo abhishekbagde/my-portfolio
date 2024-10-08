@@ -46,10 +46,9 @@ const Experience = () => {
       period: "2022 - 2023",
       location: "Mumbai, India",
       responsibilities: [
-        "Led cross-functional teams to manage core banking services, payment processing, and regulatory compliance, ensuring 99.9% uptime while addressing an average of 5 high-priority incidents daily.",
-        "Designed and developed key banking modules, including transaction processing and fraud detection algorithm, using Python, Django, C#, .NET, Node.js, Express.js, AWS Lambda, RDS, and S3. This improved transaction speed by 30% and reduced fraud by 25%.",
-        "Improved software quality by 20% through code optimization using SonarQube and improved front-end reliability by testing React.js components.",
-        "Developed and executed project release plans, optimizing stakeholder communication and ensuring timely delivery of new features.",
+        "Led cross-functional onsite and offshore teams in managing critical banking services, including core banking systems, payment processing, and regulatory compliance modules. Orchestrated daily operations addressing an average of 5 high-priority incidents, resulting in 99.9% uptime for essential banking services.",
+        "Architected and developed key banking modules, including a transaction processing system and a fraud detection algorithm, utilizing Python, Django, C#, Node.js, and Express.js, alongside AWS Lambda, RDS, and S3. The integration of modern web technologies, including React.js for customer-facing interfaces, resulted in a 30% increase in transaction speed and a 25% reduction in fraudulent activities.",
+        "Improved software quality, performance, and reliability by 20% through code optimization using SonarQube and introduced testing for React.js components to improve front-end reliability. Developed and executed project release plans, streamlining processes, enhancing stakeholder communication, and closely monitoring project status. Utilized MongoDB for optimizing database performance, ensuring efficient data handling for banking operations.",
         "Leveraged a full-stack approach with MERN technologies (MongoDB, Express.js, React.js, Node.js) integrated into the existing Python, Django, and C# systems to enhance both the customer experience and internal operations."
       ]
     },
@@ -60,11 +59,10 @@ const Experience = () => {
       period: "2020 - 2022",
       location: "Bangalore, India",
       responsibilities: [
-        "Architected and implemented a scalable microservices architecture for a critical billing system, utilizing Node.js and Express.js, which reduced processing time and increased system capacity.",
-        "Developed robust backend systems with Python, Django, Node.js, AWS, and SQL, integrating legacy systems with cloud-based microservices. Integrated MongoDB for optimized storage and retrieval, improving database operations and system performance.",
-        "Introduced DevOps practices, implementing Jenkins and Docker CI/CD pipelines, cutting deployment time by 60% and boosting release frequency from monthly to weekly.",
-        "Built an automated testing framework, improving test coverage and reducing regression testing time, while enhancing React.js front-end and Node.js back-end reliability.",
-        "Collaborated with Agile teams, mentored junior developers, and led knowledge-sharing on MERN stack and modern technologies."
+        "Architected and implemented a high-performance, scalable microservices architecture for a mission-critical billing system, utilizing Node.js and Express.js for key microservices, resulting in reduced processing time and increased system capacity.",
+        "Engineered robust and scalable backend systems with a diverse tech stack, including Python, Django, Node.js, AWS services, SQL, and Mainframe, seamlessly integrating legacy systems with modern cloud-based solutions and microservices. Integrated MongoDB into the billing system for optimized data storage and retrieval, enabling faster, scalable database operations, and improving overall system performance.",
+        "Pioneered the adoption of DevOps practices, implementing CI/CD pipelines using Jenkins and Docker that reduced deployment time by 60% and increased release frequency from monthly to weekly cycles.",
+        "Developed and implemented an automated testing framework that increased test coverage, including testing for React.js front-end components and Node.js back-end services, reducing regression testing time and significantly improving software quality and reliability. Collaborated with cross-functional Agile teams in delivering complex features, mentored junior developers, and facilitated knowledge-sharing sessions on full-stack development using MERN stack and other modern technologies."
       ]
     },
     {
@@ -74,10 +72,9 @@ const Experience = () => {
       period: "2019 - 2020",
       location: "Nagpur, India",
       responsibilities: [
-        "Implemented Gulp.js to optimize page loading times, designed a custom Chrome extension to streamline client operations, and developed PDF-linked registration processes to enhance data consistency and reduce manual effort.",
-        "Developed and maintained web applications, including a Car Rental System and Global Rewards Platform, using React.js, Node.js, .NET, C#, JavaScript, HTML/CSS, and SQL. Designed RESTful APIs for seamless integration between front-end (React) and back-end (Node.js).",
-        "Led SQL database optimization and integrated MongoDB for document-based storage, improving data processing and scalability.",
-        "Used Azure App Insight and Power BI for performance monitoring and data visualization."
+        "Introduced Gulp.js technology to significantly optimize page loading times, designed a custom Chrome extension to streamline client-side operations, and engineered PDF-linked registration and integration processes to improve data consistency and reduce manual effort.",
+        "Developed and maintained multiple web applications including a Car Rental System, Global Rewards and Incentives Platform, and Travel and Events Management Application. Utilized React.js, Node.js, .NET, C#, JavaScript, HTML/CSS, SQL, and Agile methodologies. Designed and implemented RESTful APIs for seamless data exchange and integration between front-end (React) and back-end services (Node.js).",
+        "Led SQL database optimization efforts and integrated MongoDB for document-based data storage, resulting in substantial improvements in application data processing and scalability. Integrated Azure App Insight and Power BI to enhance performance monitoring, system behavior analysis, and data visualization."
       ]
     }
   ];

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-6">
-            <p className="mb-0">© 2023 Abhishek Bagde. All rights reserved.</p>
+            <p className="mb-0">© 2024 Abhishek Bagde. All rights reserved.</p>
           </div>
           <div className="col-md-6 text-md-end">
             <a href="https://github.com/abhishekbagde" target="_blank" rel="noopener noreferrer" className="me-3">

@@ -121,6 +121,9 @@ const Layout = ({ children }) => {
                   <Link className="nav-link" href="/skills">Skills</Link>
                 </li>
                 <li className="nav-item">
+                  <Link className="nav-link" href="/achievements">Achievements</Link>
+                </li>
+                <li className="nav-item">
                   <Link className="nav-link" href="/contact">Contact</Link>
                 </li>
               </ul>

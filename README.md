@@ -4,7 +4,7 @@ Welcome to my personal portfolio website repository. This project showcases my s
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://your-portfolio-url.com)
+[View Live Portfolio](https://my-portfolio-psi-puce-77.vercel.app/)
 
 ## 🛠 Technologies Used
 
@@ -31,6 +31,7 @@ Welcome to my personal portfolio website repository. This project showcases my s
     - `/experience`: Experience page
     - `/projects`: Projects page
     - `/skills`: Skills page
+    - `/achivements`: Achievements and Hackathons page
   - `/components`: Reusable React components
   - `/styles`: Global styles and CSS modules
 
@@ -38,7 +39,7 @@ Welcome to my personal portfolio website repository. This project showcases my s
 
 1. Clone the repository:
    ```
-   git clone https://github.com/abhishekbagde/portfolio.git
+   git clone https://github.com/abhishekbagde/my-portfolio.git
    ```
 
 2. Install dependencies:
@@ -67,5 +68,5 @@ Abhishek Bagde - [abhishek.antaram.bagde@gmail.com](mailto:abhishek.antaram.bagd
 
 LinkedIn: [https://www.linkedin.com/in/im-abhiiiiiii/](https://www.linkedin.com/in/im-abhiiiiiii/)
 
-Project Link: [https://github.com/abhishekbagde/portfolio](https://github.com/abhishekbagde/portfolio)
+Project Link: [https://github.com/abhishekbagde/my-portfolio.git](https://github.com/abhishekbagde/my-portfolio.git)
 

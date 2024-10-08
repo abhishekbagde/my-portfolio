@@ -275,10 +275,10 @@ p, .btn, .card, .list-group-item {
 }
 
 .contact-section .card {
-  background-color: rgba(255, 255, 255, 0.05);
   border: none;
   border-radius: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 .contact-section .card:hover {
@@ -286,31 +286,23 @@ p, .btn, .card, .list-group-item {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.contact-section .card-body {
-  padding: 2rem;
-}
-
-.contact-info p {
-  display: flex;
-  align-items: center;
-  font-size: 1.1rem;
-}
-
-.contact-section .card a {
+.contact-icon {
+  font-size: 1.5rem;
   color: #00ffcc;
+}
+
+.contact-link {
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.contact-section .card a:hover {
-  color: #00e6b8;
-  text-decoration: underline;
+.contact-link:hover {
+  color: #00ffcc;
 }
 
-.contact-section .card svg {
-  color: #00ffcc;
-  font-size: 1.5rem;
-  margin-right: 1rem;
+.leaflet-container {
+  border-radius: 10px;
 }
 
 /* Projects Page Styles */
@@ -386,3 +378,91 @@ p, .btn, .card, .list-group-item {
 }
 
 /* ... rest of your existing styles ... */
+
+@import 'leaflet/dist/leaflet.css';
+
+/* ... rest of your styles ... */
+
+.awards-achievements-section .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #1a1a1a; /* Dark background for main cards */
+  border: none;
+}
+
+.awards-achievements-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-icon {
+  font-size: 2rem;
+  color: #00ffcc;
+}
+
+.achievement-image-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 60%; /* Adjust this value to change the aspect ratio */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.achievement-image {
+  transition: transform 0.3s ease;
+}
+
+.achievement-image:hover {
+  transform: scale(1.05);
+}
+
+/* Project Cards within Achievements */
+.awards-achievements-section .card .card.bg-secondary {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  transition: background-color 0.3s ease;
+}
+
+.awards-achievements-section .card .card.bg-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.project-icon {
+  font-size: 1.2rem;
+  color: #00ffcc;
+}
+
+/* Button Styles */
+.awards-achievements-section .btn-outline-light {
+  border-color: #00ffcc;
+  color: #00ffcc;
+}
+
+.awards-achievements-section .btn-outline-light:hover {
+  background-color: #00ffcc;
+  color: #1a1a1a;
+}
+
+/* Text Colors */
+.awards-achievements-section .card-title,
+.awards-achievements-section .card-text {
+  color: #ffffff;
+}
+
+.awards-achievements-section .card .card-text small {
+  color: #cccccc;
+}
+
+/* ... rest of your styles ... */
+
+.awards-achievements-section .list-unstyled li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.awards-achievements-section .list-unstyled li .text-info {
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+}
+
+/* ... rest of your styles ... */
