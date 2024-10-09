@@ -4,7 +4,7 @@ Welcome to my personal portfolio website repository. This project showcases my s
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://my-portfolio-psi-puce-77.vercel.app/)
+[View Live Portfolio](https://my-portfolio-sigma-nine-91.vercel.app/)
 
 ## 🛠 Technologies Used
 

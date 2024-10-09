@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect } from 'react';
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
 
@@ -46,6 +47,5 @@ const Contact = () => {
             </div>
         </section>
     );
-};
 
 export default Contact;
