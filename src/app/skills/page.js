@@ -27,11 +27,11 @@ const SkillsAndCertifications = () => {
     },
     {
       title: "Frameworks & Libraries",
-      skills: ["Django", "Flask", "React", "Node.js", "Express.js", ".NET", "Bootstrap", "jQuery"]
+      skills: ["Django", "Flask", "React", "Node.js", "Express.js", "TensorFlow", "PyTorch", "scikit-learn", "NLTK", "spaCy", "OpenCV", ".NET", "Bootstrap", "jQuery"]
     },
     {
       title: "AI & Machine Learning",
-      skills: ["Machine Learning", "Computer Vision", "Natural Language Processing"]
+      skills: ["Machine Learning", "Deep Learning", "Natural Language Processing", "Computer Vision", "Neural Networks", "Reinforcement Learning", "Large language model(LLM)"]
     },
     {
       title: "Databases",

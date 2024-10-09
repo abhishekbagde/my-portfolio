@@ -17,6 +17,7 @@ const About = () => {
               <ul className="list-group list-group-flush bg-dark mb-4">
                 <li className="list-group-item bg-dark text-white">Python, Django, Flask</li>
                 <li className="list-group-item bg-dark text-white">MERN stack (MongoDB, Express.js, React.js, Node.js)</li>
+                <li className="list-group-item bg-dark text-white">Machine Learning, Representation Learning, Natural Language Processing, Image Processing, Robotics</li>
                 <li className="list-group-item bg-dark text-white">C#, .NET</li>
                 <li className="list-group-item bg-dark text-white">AWS Cloud Services</li>
               </ul>
