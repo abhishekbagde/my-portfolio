@@ -301,9 +301,6 @@ p, .btn, .card, .list-group-item {
   color: #00ffcc;
 }
 
-.leaflet-container {
-  border-radius: 10px;
-}
 
 /* Projects Page Styles */
 .projects-section {
@@ -379,7 +376,6 @@ p, .btn, .card, .list-group-item {
 
 /* ... rest of your existing styles ... */
 
-@import 'leaflet/dist/leaflet.css';
 
 /* ... rest of your styles ... */
 
