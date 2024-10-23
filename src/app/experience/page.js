@@ -42,7 +42,7 @@ const Experience = () => {
     {
       logo: "/images/dxc-logo.png",
       company: "DXC Technology",
-      role: "Technical Team Lead",
+      role: "Software Engineer",
       period: "2022 - 2023",
       location: "Mumbai, India",
       responsibilities: [
