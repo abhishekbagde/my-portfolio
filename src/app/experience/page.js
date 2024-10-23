@@ -55,7 +55,7 @@ const Experience = () => {
     {
       logo: "/images/ibm-logo.png",
       company: "IBM",
-      role: "Senior Software Developer",
+      role: "Application Developer",
       period: "2020 - 2022",
       location: "Bangalore, India",
       responsibilities: [
@@ -68,7 +68,7 @@ const Experience = () => {
     {
       logo: "/images/persistent-logo.png",
       company: "Persistent Systems",
-      role: "Software Developer",
+      role: "Project Engineer",
       period: "2019 - 2020",
       location: "Nagpur, India",
       responsibilities: [
