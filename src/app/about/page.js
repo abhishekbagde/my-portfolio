@@ -19,7 +19,7 @@ const About = () => {
                 <li className="list-group-item bg-dark text-white">MERN stack (MongoDB, Express.js, React.js, Node.js)</li>
                 <li className="list-group-item bg-dark text-white">Machine Learning, Representation Learning, Natural Language Processing, Image Processing, Robotics</li>
                 <li className="list-group-item bg-dark text-white">C#, .NET</li>
-                <li className="list-group-item bg-dark text-white">AWS Cloud Services</li>
+                <li className="list-group-item bg-dark text-white">Azure, AWS</li>
               </ul>
               <p className="mb-4">
                 I thrive in fast-paced environments where I can solve intricate challenges, drive full project lifecycles, and lead cross-functional teams. My most notable achievements include:
