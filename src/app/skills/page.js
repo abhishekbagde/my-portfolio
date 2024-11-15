@@ -39,7 +39,7 @@ const SkillsAndCertifications = () => {
     },
     {
       title: "Cloud & DevOps",
-      skills: ["AWS Services", "Docker", "Kubernetes", "Jenkins", "Terraform"]
+      skills: ["Azure", "AWS Services", "Docker", "Kubernetes", "Jenkins", "Terraform"]
     },
     {
       title: "Version Control & Tools",
