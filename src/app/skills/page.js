@@ -1,5 +1,6 @@
 "use client";
 import { FaAws, FaMicrosoft, FaPython } from 'react-icons/fa';
+import { SiTerraform } from 'react-icons/si';
 
 const SkillCategory = ({ title, skills }) => (
   <div className="skill-category mb-4 animate-content">
@@ -63,7 +64,7 @@ const SkillsAndCertifications = () => {
     { title: "Microsoft Azure Developing Solutions", icon: <FaMicrosoft size={24} /> },
     { title: "Microsoft Azure Administrator", icon: <FaMicrosoft size={24} /> },
     { title: "Microsoft Certified Azure Fundamentals", icon: <FaMicrosoft size={24} /> },
-    { title: "Terraform Associate", icon: <FaAws size={24} /> }
+    { title: "Terraform Associate", icon: <SiTerraform size={24} color="#7B42BC" /> }
   ];
 
   return (

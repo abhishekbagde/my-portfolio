@@ -48,12 +48,6 @@ const Home = () => {
             <h3 className="role-text">{currentRole}</h3>
           </div>
         </div>
-        {isTypingComplete && (
-          <div className="mt-5 text-center cta-buttons fade-in">
-            <a href="/about" className="btn btn-outline-secondary me-3">About Me</a>
-            <a href="/contact" className="btn btn-outline-primary">Contact</a>
-          </div>
-        )}
       </div>
     </section>
   );
