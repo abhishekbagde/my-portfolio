@@ -1,23 +1,47 @@
+/* Theme Variables */
+:root {
+  --primary-bg: #120824; /* Deeper dark purple background */
+  --accent-color: #584973; /* Subtle mid purple accent */
+  --accent-light: #8a7aa0; /* Subtle light purple */
+  --accent-dark: #231235; /* Rich deeper purple */
+  --text-primary: #e0e0e0; /* Soft off-white text */
+  --text-secondary: #aaaaaa; /* Medium gray text */
+  --card-bg: rgba(30, 15, 46, 0.65); /* Semi-transparent dark purple */
+  --hover-color: #584973; /* Subtle purple hover effects */
+}
+
 /* Global styles */
 html, body {
   height: 100%;
 }
 
 body {
-  font-family: 'Fira Code', monospace;
-  background-color: #000;
-  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
 }
 
-/* Home page specific styles */
-body.home-page {
-  height: 100vh;
-  overflow: hidden;
+/* Vanta.js Background container */
+.vanta-background {
+  position: fixed !important;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  will-change: transform; /* Performance optimization hint */
+  transform: translateZ(0); /* Hardware acceleration hint */
+  backface-visibility: hidden; /* Hardware acceleration hint */
 }
 
 .home-main {
@@ -26,39 +50,164 @@ body.home-page {
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 2; /* Ensure content is above Particles */
+  z-index: 2; /* Ensure content is above background */
+  padding-top: 0;
+  min-height: calc(100vh - 170px); /* Account for fixed header and footer */
 }
 
 /* Main Content Layout */
 main {
   flex: 1 0 auto;
-  padding-top: 56px; /* Adjust based on your navbar height */
+  padding-top: 76px; /* Extra padding to account for fixed navbar */
+  padding-bottom: 100px; /* Add padding at the bottom for fixed footer */
   position: relative;
   z-index: 2; /* Ensure content is above Particles */
+  min-height: calc(100vh - 56px); /* Ensure main content takes up at least full viewport minus navbar */
+}
+
+/* Navbar styles */
+.navbar {
+  padding: 0.8rem 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(26, 9, 51, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--text-secondary);
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--accent-light);
+}
+
+/* Card styles */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid rgba(110, 65, 165, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
 }
 
 /* Footer */
 .footer {
-  flex-shrink: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 15px 0;
-  position: relative;
-  z-index: 3;
+  background-color: rgba(18, 8, 36, 0.85);
+  border-top: 1px solid rgba(88, 73, 115, 0.15);
+  padding: 1.5rem 0;
+  margin-top: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
 }
 
-.footer p {
-  font-size: 1rem;
+.footer-text {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
   margin-bottom: 0;
+  letter-spacing: 0.3px;
 }
 
 .footer a {
-  color: #fff;
+  color: #8a7aa0;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  margin: 0 8px;
+}
+
+/* Typing effect styles */
+.typing-container {
+  margin-bottom: 2rem;
+}
+
+.typing-text {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.5rem;
+  margin-left: 3px;
+  vertical-align: middle;
+  background-color: #a192b2;
+  animation: blink 1.2s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.role-container {
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.role-container.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.role-icon {
   font-size: 1.5rem;
-  transition: color 0.3s ease;
+  color: #8a7aa0; /* Even more subtle purple color */
+  opacity: 0.85;
+}
+
+.role-text {
+  margin: 0;
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+}
+
+/* Button styles */
+.btn-outline-secondary,
+.btn-outline-primary {
+  border: 1px solid #6b4f8f;
+  background: transparent;
+  color: var(--text-primary);
+  padding: 0.5rem 1.5rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.btn-outline-primary {
+  border-color: #6b4f8f;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-primary:hover {
+  background-color: rgba(88, 73, 115, 0.15);
+  color: var(--text-primary);
+  border-color: #8a7aa0;
+  transform: translateY(-1px);
 }
 
 .footer a:hover {
-  color: #00ffcc;
+  color: #a192b2;
+  opacity: 0.9;
 }
 
 /* Responsive adjustments */
@@ -75,14 +224,20 @@ main {
 
 /* Navigation Bar */
 .navbar {
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  background-color: rgba(18, 8, 36, 0.85) !important;
   transition: background-color 0.3s ease;
-  position: relative;
-  z-index: 4; /* Ensure navbar is above all other elements */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10; /* Ensure navbar is above all other elements */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.8) !important;
+  background-color: rgba(18, 8, 36, 0.95) !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Ensure particles canvas stays in the background */
@@ -162,6 +317,7 @@ p, .btn, .card, .list-group-item {
   border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s ease;
+  background-color: rgba(30, 15, 46, 0.65);
 }
 
 .about-section .card:hover {
@@ -172,8 +328,166 @@ p, .btn, .card, .list-group-item {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-.about-section strong {
-  color: #00ffcc;
+/* About page tab styling */
+.about-tabs {
+  margin-bottom: 2rem;
+}
+
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  background-color: rgba(30, 15, 46, 0.65);
+  color: var(--text-primary);
+  border: 1px solid rgba(88, 73, 115, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tab-btn:hover {
+  background-color: rgba(88, 73, 115, 0.2);
+  transform: translateY(-2px);
+}
+
+.tab-btn.active {
+  background-color: rgba(88, 73, 115, 0.3);
+  border-color: #8a7aa0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tab-icon {
+  color: #8a7aa0;
+  font-size: 1.1rem;
+}
+
+/* Profile tab content */
+.profile-emoji {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #8a7aa0;
+  font-weight: 500;
+}
+
+/* Skills tab content */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: rgba(30, 15, 46, 0.5);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+}
+
+.skill-icon-container {
+  margin-bottom: 1rem;
+}
+
+.skill-main-icon {
+  font-size: 2rem;
+  color: #8a7aa0;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/* Education tab content */
+.tab-content-education {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.education-item {
+  padding: 1.5rem;
+  background-color: rgba(30, 15, 46, 0.5);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+}
+
+.education-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.education-icon {
+  color: #8a7aa0;
+  font-size: 1.5rem;
+}
+
+.institution {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.education-date {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Achievements grid */
+.about-achievements {
+  margin-top: 3rem;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.achievement-card {
+  background-color: rgba(30, 15, 46, 0.5);
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+}
+
+.achievement-icon {
+  font-size: 2rem;
+  color: #8a7aa0;
+  margin-bottom: 1rem;
 }
 
 /* Experience page styles */
@@ -195,7 +509,8 @@ p, .btn, .card, .list-group-item {
 }
 
 .experience-item .card-title {
-  color: #00ffcc;
+  color: #8a7aa0; /* Changed from bright neon color to a more muted purple */
+  font-weight: 500;
 }
 
 .experience-item .card-subtitle {
@@ -211,7 +526,7 @@ p, .btn, .card, .list-group-item {
   content: '•';
   position: absolute;
   left: 0;
-  color: #00ffcc;
+  color: #8a7aa0; /* Changed from bright neon color to a more muted purple */
 }
 
 .company-logo-container {
@@ -234,8 +549,8 @@ p, .btn, .card, .list-group-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #00ffcc;
-  color: #000;
+  background-color: #584973; /* Changed from bright neon color to our accent color */
+  color: rgba(255, 255, 255, 0.9);
   font-size: 24px;
   font-weight: bold;
 }
@@ -246,7 +561,7 @@ p, .btn, .card, .list-group-item {
 }
 
 .skill-badge {
-  background-color: #00ffcc;
+  background-color: #8a7aa0;
   color: #000;
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -266,7 +581,7 @@ p, .btn, .card, .list-group-item {
 }
 
 .certification-item svg {
-  color: #00ffcc;
+  color: #8a7aa0;
 }
 
 /* Contact Page Styles */
@@ -288,7 +603,7 @@ p, .btn, .card, .list-group-item {
 
 .contact-icon {
   font-size: 1.5rem;
-  color: #00ffcc;
+  color: #8a7aa0;
 }
 
 .contact-link {
@@ -298,7 +613,7 @@ p, .btn, .card, .list-group-item {
 }
 
 .contact-link:hover {
-  color: #00ffcc;
+  color: #8a7aa0;
 }
 
 
@@ -324,12 +639,12 @@ p, .btn, .card, .list-group-item {
 }
 
 .projects-section .btn-outline-light {
-  border-color: #00ffcc;
-  color: #00ffcc;
+  border-color: #8a7aa0;
+  color: #8a7aa0;
 }
 
 .projects-section .btn-outline-light:hover {
-  background-color: #00ffcc;
+  background-color: #8a7aa0;
   color: #000;
 }
 
@@ -351,7 +666,7 @@ p, .btn, .card, .list-group-item {
 }
 
 .education-item .card-title {
-  color: #00ffcc;
+  color: #8a7aa0;
 }
 
 .education-item .card-subtitle {
@@ -367,11 +682,11 @@ p, .btn, .card, .list-group-item {
   content: '•';
   position: absolute;
   left: 0;
-  color: #00ffcc;
+  color: #8a7aa0;
 }
 
 .education-item svg {
-  color: #00ffcc;
+  color: #8a7aa0;
 }
 
 /* ... rest of your existing styles ... */
@@ -392,7 +707,7 @@ p, .btn, .card, .list-group-item {
 
 .achievement-icon {
   font-size: 2rem;
-  color: #00ffcc;
+  color: #8a7aa0;
 }
 
 .achievement-image-container {
@@ -424,17 +739,17 @@ p, .btn, .card, .list-group-item {
 
 .project-icon {
   font-size: 1.2rem;
-  color: #00ffcc;
+  color: #8a7aa0;
 }
 
 /* Button Styles */
 .awards-achievements-section .btn-outline-light {
-  border-color: #00ffcc;
-  color: #00ffcc;
+  border-color: #8a7aa0;
+  color: #8a7aa0;
 }
 
 .awards-achievements-section .btn-outline-light:hover {
-  background-color: #00ffcc;
+  background-color: #8a7aa0;
   color: #1a1a1a;
 }
 

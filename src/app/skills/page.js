@@ -60,10 +60,10 @@ const SkillsAndCertifications = () => {
   ];
 
   const certifications = [
-    { title: "AWS Certified Developer Associate", icon: <FaAws size={24} /> },
-    { title: "AWS Certified Cloud Practitioner", icon: <FaAws size={24} /> },
+    { title: "Microsoft Azure Developing Solutions", icon: <FaMicrosoft size={24} /> },
+    { title: "Microsoft Azure Administrator", icon: <FaMicrosoft size={24} /> },
     { title: "Microsoft Certified Azure Fundamentals", icon: <FaMicrosoft size={24} /> },
-    { title: "Coursera: Machine Learning with Python", icon: <FaPython size={24} /> }
+    { title: "Terraform Associate", icon: <FaAws size={24} /> }
   ];
 
   return (

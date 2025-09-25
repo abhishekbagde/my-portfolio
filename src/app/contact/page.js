@@ -37,7 +37,7 @@ const Contact = () => {
                                 </div>
                                 <div className="d-flex align-items-center">
                                     <FaMapMarkerAlt className="me-3 contact-icon" />
-                                    <span>Manchester, United Kingdom</span>
+                                    <span>London, United Kingdom</span>
                                 </div>
                             </div>
                         </div>

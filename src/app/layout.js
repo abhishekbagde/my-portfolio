@@ -5,22 +5,61 @@ import { useEffect, useState } from 'react';
 import './globals.css';
 import Footer from '../components/Footer'; // Adjust the import as needed
 import Link from 'next/link';
-import { Particles } from "react-particles";
-import { loadSlim } from "tsparticles-slim";
+import Script from 'next/script';
 import { useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 
 const Layout = ({ children }) => {
   const [scrolled, setScrolled] = useState(false);
-  const particlesInit = useCallback(async (engine) => {
-    await loadSlim(engine);
-  }, []);
-
+  const [vantaEffect, setVantaEffect] = useState(null);
+  
   const pathname = usePathname();
   const isHomePage = pathname === '/';
 
   useEffect(() => {
+    // Load Bootstrap JS
     require('bootstrap/dist/js/bootstrap.bundle.min.js');
+
+    // Initialize Vanta.js Birds effect
+    if (!vantaEffect && typeof window !== 'undefined') {
+      // We'll initialize it when both scripts are loaded
+      const initVanta = () => {
+        if (window.VANTA && window.THREE) {
+          setVantaEffect(
+            window.VANTA.BIRDS({
+              el: '#vanta-background',
+              mouseControls: true,
+              touchControls: true,
+              gyroControls: false,
+              minHeight: 200.00,
+              minWidth: 200.00,
+              scale: 1.00,
+              scaleMobile: 1.00,
+              backgroundColor: 0x120824, // Deeper dark purple background
+              color1: 0xd99c93, // More subtle mid purple
+              color2: 0x520a8c, // Deeper purple
+              colorMode: 'lerpGradient',
+              birdSize: 1, // Slightly smaller birds
+              wingSpan: 40.00, // Smaller wingspan for subtlety
+              speedLimit: 5, // Slower movement for elegance
+              separation: 20,
+              alignment: 22,
+              cohesion: 22,
+              quantity: 4 // Even fewer birds for a clean look
+            })
+          );
+        }
+      };
+
+      // Check if VANTA and THREE are already loaded
+      if (window.VANTA && window.THREE) {
+        initVanta();
+      }
+      // Otherwise wait for script load
+      else {
+        window.initVantaBirds = initVanta;
+      }
+    }
 
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
@@ -30,10 +69,15 @@ const Layout = ({ children }) => {
     };
 
     document.addEventListener('scroll', handleScroll);
+    
     return () => {
       document.removeEventListener('scroll', handleScroll);
+      // Clean up Vanta effect when component unmounts
+      if (vantaEffect) {
+        vantaEffect.destroy();
+      }
     };
-  }, [scrolled]);
+  }, [scrolled, vantaEffect]);
 
   return (
     <html lang="en">
@@ -42,57 +86,29 @@ const Layout = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Abhishek Bagde&apos;s Portfolio</title>
       </head>
-      <body className={`d-flex flex-column ${isHomePage ? 'home-page' : 'min-vh-100'}`}>
-        {/* Particles Background - only render on home page */}
-        {isHomePage && (
-          <Particles
-            id="tsparticles"
-            init={particlesInit}
-            options={{
-              background: {
-                color: { value: "#000000" },
-              },
-              fpsLimit: 120,
-              interactivity: {
-                events: {
-                  onClick: { enable: true, mode: "push" },
-                  onHover: { enable: true, mode: "repulse" },
-                  resize: true,
-                },
-                modes: {
-                  push: { quantity: 4 },
-                  repulse: { distance: 200, duration: 0.4 },
-                },
-              },
-              particles: {
-                color: { value: "#ffffff" },
-                links: {
-                  color: "#ffffff",
-                  distance: 150,
-                  enable: true,
-                  opacity: 0.5,
-                  width: 1,
-                },
-                move: {
-                  direction: "none",
-                  enable: true,
-                  outModes: { default: "bounce" },
-                  random: false,
-                  speed: 2.5,
-                  straight: false,
-                },
-                number: {
-                  density: { enable: true, area: 800 },
-                  value: 80,
-                },
-                opacity: { value: 0.5 },
-                shape: { type: "circle" },
-                size: { value: { min: 1, max: 5 } },
-              },
-              detectRetina: true,
-            }}
-          />
-        )}
+      <body className="d-flex flex-column min-vh-100 position-relative">
+        {/* Required scripts for Vanta.js Birds effect */}
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"
+          strategy="beforeInteractive"
+          onLoad={() => {
+            if (window.VANTA && typeof window.initVantaBirds === 'function') {
+              window.initVantaBirds();
+            }
+          }}
+        />
+        <Script
+          src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"
+          strategy="beforeInteractive"
+          onLoad={() => {
+            if (window.THREE && typeof window.initVantaBirds === 'function') {
+              window.initVantaBirds();
+            }
+          }}
+        />
+        
+        {/* Vanta Background Container */}
+        <div id="vanta-background" className="vanta-background"></div>
 
         {/* Bootstrap Navbar */}
         <nav className={`navbar navbar-expand-lg navbar-dark fixed-top ${scrolled ? 'scrolled' : ''}`}>
