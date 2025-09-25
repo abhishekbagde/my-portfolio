@@ -1,28 +1,24 @@
 import React from 'react';
-import { FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer py-4">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-6">
-            <p className="mb-0">© 2024 Abhishek Bagde. All rights reserved.</p>
+            <p className="footer-text">
+              © {new Date().getFullYear()} Abhishek Bagde
+            </p>
           </div>
-          <div className="col-md-6 text-md-end">
-            <a href="https://github.com/abhishekbagde" target="_blank" rel="noopener noreferrer" className="me-3">
+          <div className="col-md-6 text-md-end social-icons">
+            <a href="https://github.com/abhishekbagde" target="_blank" rel="noopener noreferrer" className="me-3" aria-label="GitHub">
               <FaGithub />
             </a>
-            <a href="https://www.facebook.com/abhishekbagde75/" target="_blank" rel="noopener noreferrer" className="me-3">
-              <FaFacebook />
-            </a>
-            <a href="https://www.instagram.com/im_abhiiiiiiii/" target="_blank" rel="noopener noreferrer" className="me-3">
-              <FaInstagram />
-            </a>
-            <a href="https://www.linkedin.com/in/im-abhiiiiiii/" target="_blank" rel="noopener noreferrer" className="me-3">
+            <a href="https://www.linkedin.com/in/im-abhiiiiiii/" target="_blank" rel="noopener noreferrer" className="me-3" aria-label="LinkedIn">
               <FaLinkedin />
             </a>
-            <a href="mailto:abhishek.antaram.bagde@gmail.com">
+            <a href="mailto:abhishek.antaram.bagde@gmail.com" aria-label="Email">
               <FaEnvelope />
             </a>
           </div>

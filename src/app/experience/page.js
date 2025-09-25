@@ -40,6 +40,21 @@ const ExperienceItem = ({ logo, company, role, period, location, responsibilitie
 const Experience = () => {
   const experiences = [
     {
+      logo: "/images/lseg-logo.png",
+      company: "London Stock Exchange Group",
+      role: "Cloud Software Engineer",
+      period: "2025 - 2026",
+      location: "London, United Kingdom",
+      responsibilities: [
+        "Developed and maintained the enterprise Platform Orchestrator, enabling automation of subscription onboarding, identity management, firewall rules, and telemetry across Azure environments.",
+        "Designed and implemented core services in C# and .NET, integrating with Azure cloud resources and ensuring secure, scalable, and resilient orchestration workflows.",
+        "Automated infrastructure provisioning and governance using Terraform with GitLab and Azure DevOps pipelines, reducing manual effort and improving deployment consistency.",
+        "Collaborated with cross-functional teams including security, SRE, platform, and automation engineers to integrate new services into the orchestrator, demonstrating strong teamwork and problem-solving skills.",
+        "Applied solid system design principles to build monitoring, retry, and error-handling mechanisms, improving reliability and reducing downtime.",
+        "Delivered solutions across a wide range of Azure services (identity, networking, governance, telemetry, and security), strengthening platform automation and cloud adoption at scale."
+      ]
+    },
+    {
       logo: "/images/dxc-logo.png",
       company: "DXC Technology",
       role: "Software Engineer",
