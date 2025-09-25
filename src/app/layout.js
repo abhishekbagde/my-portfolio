@@ -15,6 +15,38 @@ const Layout = ({ children }) => {
   
   const pathname = usePathname();
   const isHomePage = pathname === '/';
+  
+  // Function to close mobile navbar
+  const closeNavbar = () => {
+    if (typeof window !== 'undefined') {
+      try {
+        // Check if the navbar is expanded
+        const navbarCollapse = document.getElementById('navbarNav');
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+          // First try using Bootstrap's Collapse API if available
+          if (typeof bootstrap !== 'undefined') {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+            bsCollapse.hide();
+          } else {
+            // Fallback method: manually toggle the class and aria attribute
+            navbarCollapse.classList.remove('show');
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            if (navbarToggler) {
+              navbarToggler.setAttribute('aria-expanded', 'false');
+              navbarToggler.classList.add('collapsed');
+            }
+          }
+        }
+      } catch (error) {
+        console.error('Error closing navbar:', error);
+      }
+    }
+  };
+
+  // Close navbar when route changes
+  useEffect(() => {
+    closeNavbar();
+  }, [pathname]);
 
   useEffect(() => {
     // Load Bootstrap JS
@@ -119,28 +151,28 @@ const Layout = ({ children }) => {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link className="nav-link" href="/">Home</Link>
+                  <Link className="nav-link" href="/" onClick={closeNavbar}>Home</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="/about">About</Link>
+                  <Link className="nav-link" href="/about" onClick={closeNavbar}>About</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="/projects">Projects</Link>
+                  <Link className="nav-link" href="/projects" onClick={closeNavbar}>Projects</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="/experience">Experience</Link>
+                  <Link className="nav-link" href="/experience" onClick={closeNavbar}>Experience</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="/education">Education</Link>
+                  <Link className="nav-link" href="/education" onClick={closeNavbar}>Education</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="/skills">Skills</Link>
+                  <Link className="nav-link" href="/skills" onClick={closeNavbar}>Skills</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="/achievements">Achievements</Link>
+                  <Link className="nav-link" href="/achievements" onClick={closeNavbar}>Achievements</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="/contact">Contact</Link>
+                  <Link className="nav-link" href="/contact" onClick={closeNavbar}>Contact</Link>
                 </li>
               </ul>
             </div>
